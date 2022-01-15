@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './res/listData.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,26 +14,30 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('zzchm'),
         ),
-        body: const HomeContent(),
+        body: HomeContent(),
       ),
       theme: ThemeData(primarySwatch: Colors.yellow),
     );
   }
 }
 
+// ignore: must_be_immutable
 class HomeContent extends StatelessWidget {
-  const HomeContent({Key? key}) : super(key: key);
+  List list = [];
+  HomeContent({Key? key}) : super(key: key) {
+    for (var i = 0; i < 20; i++) {
+      list.add('zzchm$i');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: listData.length,
+      itemCount: list.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(listData[index]["title"],
-              style: const TextStyle(fontSize: 16, color: Colors.blue)),
-          subtitle: Text(listData[index]["author"]),
-          leading: Image.network(listData[index]["imageUrl"]),
+          title: Text(list[index],
+              style: const TextStyle(fontSize: 24, color: Colors.blue)),
         );
       },
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './res/listData.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,18 +24,24 @@ class MyApp extends StatelessWidget {
 class HomeContent extends StatelessWidget {
   const HomeContent({Key? key}) : super(key: key);
 
+  List<Widget> _getData() {
+    return const [
+      ListTile(
+        title: Text('zzchm1'),
+      ),
+      ListTile(
+        title: Text('zzchm2'),
+      ),
+      ListTile(
+        title: Text('zzchm3'),
+      )
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: listData.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(listData[index]["title"],
-              style: const TextStyle(fontSize: 16, color: Colors.blue)),
-          subtitle: Text(listData[index]["author"]),
-          leading: Image.network(listData[index]["imageUrl"]),
-        );
-      },
+    return ListView(
+      children: _getData(),
     );
   }
 }

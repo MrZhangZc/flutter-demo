@@ -25,18 +25,22 @@ class MyApp extends StatelessWidget {
 class HomeContent extends StatelessWidget {
   const HomeContent({Key? key}) : super(key: key);
 
+  List<Widget> _getData() {
+    var tempData = listData.map((value) {
+      return ListTile(
+        leading: Image.network(value["imageUrl"]),
+        title: Text(value["title"]),
+        subtitle: Text(value["author"]),
+      );
+    });
+
+    return tempData.toList();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: listData.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(listData[index]["title"],
-              style: const TextStyle(fontSize: 16, color: Colors.blue)),
-          subtitle: Text(listData[index]["author"]),
-          leading: Image.network(listData[index]["imageUrl"]),
-        );
-      },
+    return ListView(
+      children: _getData(),
     );
   }
 }
