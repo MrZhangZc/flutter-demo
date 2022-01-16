@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../search.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +11,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Text('我是首页');
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          child: const Text('跳转搜索页面'),
+          onPressed: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const SearchPage()));
+          },
+        ),
+        const SizedBox(height: 20),
+      ],
+    );
   }
 }
