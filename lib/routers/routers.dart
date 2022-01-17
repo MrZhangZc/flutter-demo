@@ -6,13 +6,16 @@ import '../pages/tabs.dart';
 import '../pages/product.dart';
 import '../pages/product_info.dart';
 
+import '../pages/appBarText.dart';
+
 final routers = {
   '/': (context) => const Tabs(),
   '/form': (context) => FormPage(),
   '/product': (context) => const ProductPage(),
   '/productInfo': (context, {arguments}) =>
       ProductInfoPage(arguments: arguments),
-  '/search': (context, {arguments}) => SearchPage(arguments: arguments)
+  '/search': (context, {arguments}) => SearchPage(arguments: arguments),
+  '/appBarText': (context) => const AppBarText(),
 };
 
 // ignore: prefer_function_declarations_over_variables
