@@ -75,11 +75,15 @@ class _TabsState extends State<Tabs> {
               title: Text('首页'),
             ),
             const Divider(),
-            const ListTile(
-              leading: CircleAvatar(
+            ListTile(
+              leading: const CircleAvatar(
                 child: Icon(Icons.people),
               ),
-              title: Text('我的空间'),
+              title: const Text('我的空间'),
+              onTap: () {
+                Navigator.of(context).pop(); // 隐藏侧边
+                Navigator.pushNamed(context, '/product');
+              },
             ),
             const Divider(),
             const ListTile(
