@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false, // 去掉debug logo
         // home: const Tabs(),
         // theme: ThemeData(primarySwatch: Colors.yellow),
-        initialRoute: '/appBarText',
+        initialRoute: '/',
         onGenerateRoute: onGenerateRoute);
   }
 }

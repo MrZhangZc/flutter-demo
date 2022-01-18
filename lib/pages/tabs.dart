@@ -44,6 +44,53 @@ class _TabsState extends State<Tabs> {
               icon: Icon(Icons.manage_accounts), label: '我的')
         ],
       ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Row(
+              children: const [
+                Expanded(
+                  child: DrawerHeader(
+                    child: Text(
+                      '侧边栏',
+                      style: TextStyle(fontSize: 24, color: Colors.red),
+                    ),
+                    decoration: BoxDecoration(
+                        // color: Colors.yellow
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                "https://file.lihailezzc.com/resource/e55e8ebe9db0189fc7f02c117ead3d08.jpg"),
+                            fit: BoxFit.cover)),
+                  ),
+                )
+              ],
+            ),
+            const ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.home),
+              ),
+              title: Text('首页'),
+            ),
+            const Divider(),
+            const ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.people),
+              ),
+              title: Text('我的空间'),
+            ),
+            const Divider(),
+            const ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.settings),
+              ),
+              title: Text('设置'),
+            )
+          ],
+        ),
+      ),
+      endDrawer: const Drawer(
+        child: Text('right'),
+      ),
     );
   }
 }
