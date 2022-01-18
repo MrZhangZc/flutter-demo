@@ -50,12 +50,10 @@ class _TabsState extends State<Tabs> {
             Row(
               children: const [
                 Expanded(
-                  child: UserAccountsDrawerHeader(
-                    accountName: Text("zzchm"),
-                    accountEmail: Text("jiayouzzc@gmail.com"),
-                    currentAccountPicture: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          "https://file.lihailezzc.com/resource/e55e8ebe9db0189fc7f02c117ead3d08.jpg"),
+                  child: DrawerHeader(
+                    child: Text(
+                      '侧边栏',
+                      style: TextStyle(fontSize: 24, color: Colors.red),
                     ),
                     decoration: BoxDecoration(
                         // color: Colors.yellow
@@ -63,7 +61,6 @@ class _TabsState extends State<Tabs> {
                             image: NetworkImage(
                                 "https://file.lihailezzc.com/resource/e55e8ebe9db0189fc7f02c117ead3d08.jpg"),
                             fit: BoxFit.cover)),
-                    otherAccountsPictures: [],
                   ),
                 )
               ],
