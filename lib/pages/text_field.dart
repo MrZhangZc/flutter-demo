@@ -23,6 +23,24 @@ class _TextFieldDemoPageState extends State<TextFieldDemoPage> {
             TextField(
               decoration: InputDecoration(
                   hintText: '请输入姓名', border: OutlineInputBorder()),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              maxLength: 3,
+              maxLines: 4,
+              decoration: InputDecoration(
+                hintText: '请输入姓名',
+                border: OutlineInputBorder(),
+                labelText: "姓名",
+              ),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  labelText: "密码",
+                  hintText: '请输入密码',
+                  border: OutlineInputBorder()),
             )
           ],
         ),
