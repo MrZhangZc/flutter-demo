@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false, // 去掉debug logo
         // home: const Tabs(),
         // theme: ThemeData(primarySwatch: Colors.yellow),
-        initialRoute: '/',
+        initialRoute: '/textField',
         onGenerateRoute: onGenerateRoute);
   }
 }

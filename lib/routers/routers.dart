@@ -5,8 +5,8 @@ import '../pages/search.dart';
 import '../pages/tabs.dart';
 import '../pages/product.dart';
 import '../pages/product_info.dart';
-
 import '../pages/appBarText.dart';
+import '../pages/text_field.dart';
 
 final routers = {
   '/': (context) => const Tabs(),
@@ -16,6 +16,7 @@ final routers = {
       ProductInfoPage(arguments: arguments),
   '/search': (context, {arguments}) => SearchPage(arguments: arguments),
   '/appBarText': (context) => const AppBarText(),
+  '/textField': (context) => TextFieldDemoPage(),
 };
 
 // ignore: prefer_function_declarations_over_variables
